@@ -16,8 +16,8 @@ class Users(models.Model):
 
 class UserPostMapping(models.Model):
     logid = models.BigAutoField(db_column='LogId', primary_key=True)
-    userId = models.BigAutoField(db_column='UserId', primary_key=True)
-    postId = models.BigAutoField(db_column='PostId', primary_key=True)
+    userId = models.IntegerField(db_column='UserId')
+    postId = models.IntegerField(db_column='PostId')
 
     class Meta:
         db_table = 'UserPostMapping'
