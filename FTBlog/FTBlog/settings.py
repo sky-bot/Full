@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
     'posts',
 ]
 
@@ -83,13 +83,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'HOST': "fullthrottle.cspqjzsqfzqg.us-east-1.rds.amazonaws.com",
+        'HOST': "localhost",
         'PORT': "3306",
         'CONN_MAX_AGE': 3600,
 
-        'NAME': "fullthrottle",
-        'USER':"fullthrottle",
-        'PASSWORD': "akashpani10",
+        'NAME': "db",
+        'USER':"akash",
+        'PASSWORD': "Student123@",
     }
 }
 
