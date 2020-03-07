@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from django.http import HttpResponse
+from . import views
+# from FTBlog import posts.url
+
+def profile_view(request):
+    return HttpResponse("Welcome %s <br> <a href='/accounts/logout/'>Logout</a>" % request.user)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^', include('posts.urls')),
 ]
