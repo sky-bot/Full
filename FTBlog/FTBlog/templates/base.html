@@ -10,23 +10,30 @@
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
-        <a class="navbar-brand" href="https://fullthrottlelabs.com/img/logo/logo-2.png">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">
             <img src="https://fullthrottlelabs.com/img/logo/logo-2.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link text-white" href="#">Active</a>
             </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'logout_url' %}">LogOut</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#">Write your posts</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Login</a>
-             </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'login_url' %}">LogIn</a>
+                </li>
+                
 
+            {% endif %}
         </ul>
     </nav>
-    <h1>This is Heading</h1>
-    <p1>This is working</p1>
+
     {% block content %}
     {% endblock %}
 
