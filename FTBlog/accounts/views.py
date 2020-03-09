@@ -8,7 +8,8 @@ def indexView(request):
     return render(request, 'index.html')
 
 def dashboardView(request):
-    return render(request, 'dashboard.html')
+    posts = list(Posts.objects.all().values())
+    return render(request, 'dashboard.html', {'posts':posts})
 
 def registerView(request):
     if request.method == 'POST':
@@ -23,17 +24,19 @@ def registerView(request):
 @login_required
 def addPostView(request):
     if request.method == 'POST':
-        print(request)
         post = request.POST
-
         createdAt = datetime.now().replace(microsecond=0)
-        
-        print("==========================",post)
-        
         Posts.objects.create(title=post['title'], subtitle=post['subtitle'], author=post['author'], posts=post['blogcontent'], createdAt=createdAt)
 
     return render(request, 'addpost.html')
 
+def postView(request, postId):
+    print("====================")
+    post = list(Posts.objects.filter(postId=postId).values())[0]
+    print(type(post))
+
+    print("=======================")
+    return render(request, 'post.html', {'post':post})
 
 
 
