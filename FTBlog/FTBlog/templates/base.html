@@ -6,6 +6,7 @@
         FULL THROTTLE
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <meta name="csrf_token" content="{% csrf_token %} "> -->
 </head>
 
 <body>
@@ -22,7 +23,7 @@
                 <a class="nav-link text-white" href="{% url 'logout_url' %}">LogOut</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Write your posts</a>
+                <a class="nav-link text-white" href="{% url 'addpost_url' %}">Write your posts</a>
             </li>
             {% else %}
                 <li class="nav-item">

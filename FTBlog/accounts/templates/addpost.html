@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<h2>Unleash the hidden power within you by writing.</h2>
+<br>
+<div style="margin:0em 2em 0em 2em;">
+    {% csrf_token %}
+    <form name="addForm" id="addForm" method ="POST" >
+        {% csrf_token %}
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title" name = "title" id="title" required data-validation-required-message="Please insert your title.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Subtitle</label>
+            <input type="text" class="form-control" placeholder="Subtitle" name="subtitle" id="subtitle"  required data-validation-required-message="Please enter your Subtitle.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Author</label>
+            <input type="text" class="form-control" placeholder="Author's name" name="author" id="author"  required data-validation-required-message="Please enter your name.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Blog Content</label>
+            <textarea rows="5" class="form-control" placeholder="Blog Content" name="blogcontent" id="blogcontent"   required data-validation-required-message="Please enter a Blog Content"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </div>
+</div>
+
+{% endblock %}

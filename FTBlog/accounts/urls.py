@@ -7,5 +7,6 @@ urlpatterns = [
     path('dashboard/', views.dashboardView, name='dashboard'),
     path('login/', LoginView.as_view(), name='login_url'),
     path('register/', views.registerView, name='register_url'),
-    path('logout/', LogoutView.as_view(), name='logout_url')
+    path('logout/', LogoutView.as_view(), name='logout_url'),
+    path('addpost/', views.addPostView, name='addpost_url')
 ]

@@ -24,6 +24,9 @@ class UserPostMapping(models.Model):
 
 class Posts(models.Model):
     postId = models.BigAutoField(db_column='PostId', primary_key=True)
+    title =  models.TextField(blank = False, default='Anonymous User')
+    subtitle = models.TextField(blank = False, default='--')
+    author =  models.TextField(blank = False, default='--')
     posts = models.TextField(blank = False)
     createdAt =  models.DateTimeField(db_column="CreatedAt", blank=True, null=True)
 
